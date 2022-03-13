@@ -7,7 +7,15 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+<style>
+    label, input {
+        display: block;
+    }
 
+    span.helptext {
+        display: none;
+    }
+</style>
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -45,6 +53,11 @@
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
+            <div>
+                 {% if user.is_authenticated %}
+                     <h4> {{ user.username }}  </h4>
+                {% endif %}
+            </div>
         </div>
     </div>
 </nav>
